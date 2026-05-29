@@ -26,12 +26,18 @@ h1 {
   letter-spacing: 0.1em;
 }
 
-.score-label {
+.stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.stat {
   font-size: 1.25rem;
   font-weight: 600;
 }
 
-#score {
+#score,
+#lines {
   color: #4ecca3;
 }
 
