@@ -66,10 +66,12 @@ const PIECE_TYPES = Object.keys(SHAPES);
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const scoreEl = document.getElementById('score');
+const linesEl = document.getElementById('lines');
 
 let board;
 let piece;
 let score;
+let totalLines;
 let gameOver;
 let dropAccumulator;
 let lastTime;
@@ -256,10 +258,12 @@ function update(time) {
 function init() {
   board = createBoard();
   score = 0;
+  totalLines = 0;
   gameOver = false;
   dropAccumulator = 0;
   lastTime = 0;
   scoreEl.textContent = '0';
+  linesEl.textContent = '0';
   spawnPiece();
 }
 
