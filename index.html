@@ -3,18 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tetris</title>
+  <meta name="description" content="Play classic Tetris in your browser. No install required.">
+  <meta name="theme-color" content="#1a1a2e">
+  <title>Tetris — Browser Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1>Tetris</h1>
-    <div class="stats">
-      <p class="stat">Score: <span id="score">0</span></p>
-      <p class="stat">Lines: <span id="lines">0</span></p>
-    </div>
-    <canvas id="game" width="300" height="600"></canvas>
-    <p class="hint">← → move · ↑ rotate · ↓ drop · R restart</p>
+  <main class="app">
+    <header class="header">
+      <h1>Tetris</h1>
+      <p class="tagline">Classic blocks. Clear lines. Beat your score.</p>
+    </header>
+
+    <section class="game-panel" aria-label="Tetris game">
+      <div class="stats" role="status" aria-live="polite">
+        <div class="stat">
+          <span class="stat-label">Score</span>
+          <span class="stat-value" id="score">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Lines</span>
+          <span class="stat-value" id="lines">0</span>
+        </div>
+      </div>
+
+      <canvas
+        id="game"
+        width="300"
+        height="600"
+        role="img"
+        aria-label="Tetris playfield"
+      ></canvas>
+    </section>
+
+    <section class="controls" aria-labelledby="controls-heading">
+      <h2 id="controls-heading" class="controls-heading">Controls</h2>
+      <ul class="control-list">
+        <li><kbd>←</kbd> <kbd>→</kbd> Move</li>
+        <li><kbd>↑</kbd> Rotate</li>
+        <li><kbd>↓</kbd> Soft drop</li>
+        <li><kbd>R</kbd> Restart</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>Open source · Runs offline · No install needed</p>
+    </footer>
   </main>
   <script src="game.js"></script>
 </body>
